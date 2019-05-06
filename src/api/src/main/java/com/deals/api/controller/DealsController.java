@@ -56,7 +56,7 @@ public class DealsController {
 	@GetMapping("/deals")
 	public List<Deals> getAllDeals(@RequestHeader(value="token") String token) {
 		String subject = securityService.validate(token);
-	    return dealsRepository.findAll();
+	    return dealsRepository.findAvailableDeals();
 	}
 	
 	@PostMapping("/deals")

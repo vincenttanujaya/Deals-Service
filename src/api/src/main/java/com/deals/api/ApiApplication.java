@@ -6,9 +6,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+
+@EnableJpaRepositories("com.deals.api.repository")
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 @EnableJpaAuditing
-@EnableJpaRepositories("com.deals.api.repository")
 public class ApiApplication {
 
 	public static void main(String[] args) {
