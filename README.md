@@ -1,5 +1,5 @@
 # Deals Service
-## KK C
+## PBKK C
 ## Team Members
 - Dewi Sekarini (05111640000004)
 - Diana Hudani Kisyono (05111640000079)
