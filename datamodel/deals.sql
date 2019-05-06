@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Bulan Mei 2019 pada 09.31
+-- Waktu pembuatan: 06 Bulan Mei 2019 pada 15.24
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -32,6 +32,7 @@ CREATE TABLE `deals` (
   `id_deals` int(11) NOT NULL,
   `deals_name` varchar(50) NOT NULL,
   `deals_description` varchar(400) NOT NULL,
+  `deals_max_use` int(11) NOT NULL,
   `deals_exp` date NOT NULL,
   `deals_start_date` date NOT NULL,
   `deals_type` varchar(50) NOT NULL,
@@ -47,13 +48,23 @@ CREATE TABLE `deals` (
 -- Dumping data untuk tabel `deals`
 --
 
-INSERT INTO `deals` (`id_deals`, `deals_name`, `deals_description`, `deals_exp`, `deals_start_date`, `deals_type`, `deals_disc_type`, `deals_discount`, `deals_max_value`, `deals_min_payment`, `deals_pict`, `created_date`) VALUES
-(3, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 10:23:33'),
-(4, 'PROMO MERDEKAAAA', 'Disc 50% Maks. 20000', '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpsg', '2019-05-05 14:39:49'),
-(6, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:16'),
-(7, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:24'),
-(10, 'WKWK', 'hehehe', '2019-05-23', '2019-05-01', 'Makanan', 'Potongan', 4000, 4000, 0, 'deals.jpg', '2019-05-06 05:34:19'),
-(11, 'PROMO RAMADHAN', 'Disc 50% Maks. 20000', '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 05:34:49');
+INSERT INTO `deals` (`id_deals`, `deals_name`, `deals_description`, `deals_max_use`, `deals_exp`, `deals_start_date`, `deals_type`, `deals_disc_type`, `deals_discount`, `deals_max_value`, `deals_min_payment`, `deals_pict`, `created_date`) VALUES
+(3, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 10:23:33'),
+(4, 'PROMO MERDEKAAAA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpsg', '2019-05-05 14:39:49'),
+(6, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:16'),
+(7, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:24'),
+(10, 'WKWK', 'hehehe', 0, '2019-05-23', '2019-05-01', 'Makanan', 'Potongan', 4000, 4000, 0, 'deals.jpg', '2019-05-06 05:34:19'),
+(11, 'PROMO RAMADHAN', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 05:34:49'),
+(12, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:16'),
+(13, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:45'),
+(14, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:35:15'),
+(15, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:26'),
+(16, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:27'),
+(17, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:28'),
+(18, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:04:01'),
+(19, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:09:51'),
+(20, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:15:46'),
+(21, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:15:51');
 
 -- --------------------------------------------------------
 
@@ -72,10 +83,14 @@ CREATE TABLE `deals_record` (
 --
 
 INSERT INTO `deals_record` (`id_record_deals`, `id_deals`, `id_customer`) VALUES
-(1, 3, 1),
-(2, 4, 4),
-(3, 3, 1),
-(4, 3, 2);
+(2, 4, 3),
+(3, 3, 3),
+(4, 3, 3),
+(5, 3, 3),
+(6, 3, 3),
+(7, 1, 3),
+(8, 2, 3),
+(9, 2, 3);
 
 --
 -- Indexes for dumped tables
@@ -101,13 +116,13 @@ ALTER TABLE `deals_record`
 -- AUTO_INCREMENT untuk tabel `deals`
 --
 ALTER TABLE `deals`
-  MODIFY `id_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `deals_record`
 --
 ALTER TABLE `deals_record`
-  MODIFY `id_record_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_record_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
