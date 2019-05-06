@@ -1,5 +1,6 @@
 package com.deals.api.services;
 
+import java.awt.print.Printable;
 import java.security.Key;
 import java.util.Date;
 
@@ -19,10 +20,11 @@ public class SecurityServiceImpl implements SecurityService {
 	public static final String secretKey= "4C8kum4LxyKWYLM78sKdXrzbBjDCFyfX";
 	
 	@Override
-	public String validate(String token) {		
+	public String validate(String token) {	
 			Claims claims = Jwts.parser()         
 				       .setSigningKey(DatatypeConverter.parseBase64Binary(secretKey))
 				       .parseClaimsJws(token).getBody();
 			return claims.getSubject();	
+	
 	}
 }

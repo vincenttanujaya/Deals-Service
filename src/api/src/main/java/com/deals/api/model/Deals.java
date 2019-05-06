@@ -35,6 +35,9 @@ public class Deals implements Serializable {
 
     @NotBlank
     private String deals_type;
+    
+    @NotBlank
+    private String deals_max_use;
 
     @NotBlank
     private String deals_disc_type;
@@ -78,6 +81,14 @@ public class Deals implements Serializable {
 
 	public void setDeals_description(String deals_description) {
 		this.deals_description = deals_description;
+	}
+
+	public String getDeals_max_use() {
+		return deals_max_use;
+	}
+
+	public void setDeals_max_use(String deals_max_use) {
+		this.deals_max_use = deals_max_use;
 	}
 
 	public String getDeals_exp() {

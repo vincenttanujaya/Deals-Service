@@ -82,6 +82,7 @@ public class DealsController {
 
 	    deals.setDeals_name(dealsDetails.getDeals_name());
 	    deals.setDeals_description(dealsDetails.getDeals_description());
+	    deals.setDeals_max_use(dealsDetails.getDeals_max_use());
 	    deals.setDeals_exp(dealsDetails.getDeals_exp());
 	    deals.setDeals_start_date(dealsDetails.getDeals_start_date());
 	    deals.setDeals_type(dealsDetails.getDeals_type());

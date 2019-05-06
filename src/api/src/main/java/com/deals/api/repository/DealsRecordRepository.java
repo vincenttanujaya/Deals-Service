@@ -8,6 +8,5 @@ import com.deals.api.model.DealsRecord;
 
 @Repository
 public interface DealsRecordRepository extends JpaRepository<DealsRecord, Long> {
-	@Query(value = "select * from deals", nativeQuery = true)
-    List<DealsRecord> findUserUsingRollNo();
+	
 }
