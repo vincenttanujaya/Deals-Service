@@ -30,20 +30,21 @@ public class DealsController {
 	SecurityService securityService;
 	//RECORD SECTION
 	@GetMapping("/usedeals")
-	public List<DealsRecord> getAllRecord(@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	public List<DealsRecord> getAllRecord() {
+//		String subject = securityService.validate(token);
 	    return dealsRecordRepository.findAll();
 	}
 	@PostMapping("/usedeals")
-	public DealsRecord addRecordDeals(@RequestBody @Valid DealsRecord deals,@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
-		int id_customer = Integer.parseInt(subject);
+	public DealsRecord addRecordDeals(@RequestBody @Valid DealsRecord deals) {
+//		String subject = securityService.validate(token);
+//		int id_customer = Integer.parseInt(subject);
+		int id_customer = 1;
 		deals.setId_customer(id_customer);
 	    return dealsRecordRepository.save(deals);
 	}
 	@DeleteMapping("/usedeals/{id_record_deals}")
-	public ResponseEntity<?> deleteRecordDeals(@PathVariable(value = "id_record_deals") Long recordDealsId,@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	public ResponseEntity<?> deleteRecordDeals(@PathVariable(value = "id_record_deals") Long recordDealsId) {
+//		String subject = securityService.validate(token);
 	    DealsRecord deals = dealsRecordRepository.findById(recordDealsId)
 	            .orElseThrow(() -> new ResourceNotFoundException("Deals", "id_record_deals", recordDealsId));
 
@@ -54,29 +55,29 @@ public class DealsController {
 	
 	// DEALS SECTION
 	@GetMapping("/deals")
-	public List<Deals> getAllDeals(@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	public List<Deals> getAllDeals() {
+//		String subject = securityService.validate(token);
 	    return dealsRepository.findAvailableDeals();
 	}
 	
 	@PostMapping("/deals")
-	public Deals createDeals(@RequestBody @Valid Deals deals,@RequestHeader(value="token") String token) {
+	public Deals createDeals(@RequestBody @Valid Deals deals) {
 //		return deals;
-		String subject = securityService.validate(token);
+//		String subject = securityService.validate(token);
 	    return dealsRepository.save(deals);
 	}
 	
 	@GetMapping("/deals/{ID_Deals}")
-	public Deals getDealsById(@PathVariable(value = "ID_Deals") Long ID_Deals,@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	public Deals getDealsById(@PathVariable(value = "ID_Deals") Long ID_Deals) {
+//		String subject = securityService.validate(token);
 	    return dealsRepository.findById(ID_Deals)
 	            .orElseThrow(() -> new ResourceNotFoundException("Deals", "ID_Deals", ID_Deals));
 	}
 	
 	@PutMapping("/deals/{ID_Deals}")
 	public Deals updateDeals(@PathVariable(value = "ID_Deals") Long dealsId,
-	                                        @Valid @RequestBody Deals dealsDetails,@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	                                        @Valid @RequestBody Deals dealsDetails) {
+//		String subject = securityService.validate(token);
 		Deals deals = dealsRepository.findById(dealsId)
 	            .orElseThrow(() -> new ResourceNotFoundException("Deals", "ID_Deals", dealsId));
 
@@ -97,8 +98,8 @@ public class DealsController {
 	}
 	
 	@DeleteMapping("/deals/{ID_Deals}")
-	public ResponseEntity<?> deleteDeals(@PathVariable(value = "ID_Deals") Long dealsId,@RequestHeader(value="token") String token) {
-		String subject = securityService.validate(token);
+	public ResponseEntity<?> deleteDeals(@PathVariable(value = "ID_Deals") Long dealsId) {
+//		String subject = securityService.validate(token);
 	    Deals deals = dealsRepository.findById(dealsId)
 	            .orElseThrow(() -> new ResourceNotFoundException("Deals", "ID_Deals", dealsId));
 

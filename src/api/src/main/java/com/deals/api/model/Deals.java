@@ -6,6 +6,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -21,7 +22,10 @@ public class Deals implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_deals;
 
-    @NotBlank
+    @Column(nullable = true)
+    private String id_restoran;
+    
+	@NotBlank
     private String deals_name;
 
     @NotBlank
@@ -59,6 +63,14 @@ public class Deals implements Serializable {
     @CreatedDate
     private Date created_date;
 
+    public String getId_restoran() {
+		return id_restoran;
+	}
+
+	public void setId_restoran(String id_restoran) {
+		this.id_restoran = id_restoran;
+	}
+    
 	public Long getId_deals() {
 		return id_deals;
 	}

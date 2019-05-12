@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Bulan Mei 2019 pada 15.24
+-- Waktu pembuatan: 12 Bulan Mei 2019 pada 18.40
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -30,9 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `deals` (
   `id_deals` int(11) NOT NULL,
+  `id_restoran` int(11) DEFAULT NULL,
   `deals_name` varchar(50) NOT NULL,
   `deals_description` varchar(400) NOT NULL,
-  `deals_max_use` int(11) NOT NULL,
+  `deals_max_use` int(11) DEFAULT NULL,
   `deals_exp` date NOT NULL,
   `deals_start_date` date NOT NULL,
   `deals_type` varchar(50) NOT NULL,
@@ -48,23 +49,16 @@ CREATE TABLE `deals` (
 -- Dumping data untuk tabel `deals`
 --
 
-INSERT INTO `deals` (`id_deals`, `deals_name`, `deals_description`, `deals_max_use`, `deals_exp`, `deals_start_date`, `deals_type`, `deals_disc_type`, `deals_discount`, `deals_max_value`, `deals_min_payment`, `deals_pict`, `created_date`) VALUES
-(3, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 10:23:33'),
-(4, 'PROMO MERDEKAAAA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpsg', '2019-05-05 14:39:49'),
-(6, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:16'),
-(7, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:24'),
-(10, 'WKWK', 'hehehe', 0, '2019-05-23', '2019-05-01', 'Makanan', 'Potongan', 4000, 4000, 0, 'deals.jpg', '2019-05-06 05:34:19'),
-(11, 'PROMO RAMADHAN', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 05:34:49'),
-(12, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:16'),
-(13, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:45'),
-(14, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:35:15'),
-(15, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:26'),
-(16, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:27'),
-(17, 'PROMO BUKA', 'Disc 50% Maks. 20000', 0, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 11:38:28'),
-(18, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:04:01'),
-(19, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:09:51'),
-(20, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:15:46'),
-(21, 'PROMO BUKA', 'Disc 50% Maks. 20000', 5, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 13:15:51');
+INSERT INTO `deals` (`id_deals`, `id_restoran`, `deals_name`, `deals_description`, `deals_max_use`, `deals_exp`, `deals_start_date`, `deals_type`, `deals_disc_type`, `deals_discount`, `deals_max_value`, `deals_min_payment`, `deals_pict`, `created_date`) VALUES
+(3, 1, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 10:23:33'),
+(4, NULL, 'PROMO MERDEKAAAA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpsg', '2019-05-05 14:39:49'),
+(6, NULL, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:16'),
+(7, NULL, 'PROMO MERDEKA', 'Disc 50% Maks. 20000', NULL, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-05 15:35:24'),
+(10, NULL, 'WKWK', 'hehehe', NULL, '2019-05-23', '2019-05-01', 'Makanan', 'Potongan', 4000, 4000, 0, 'deals.jpg', '2019-05-06 05:34:19'),
+(11, NULL, 'PROMO RAMADHAN', 'Disc 50% Maks. 20000', NULL, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 05:34:49'),
+(12, NULL, 'PROMO BUKA', 'Disc 50% Maks. 20000', NULL, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:16'),
+(13, NULL, 'PROMO BUKA', 'Disc 50% Maks. 20000', NULL, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpg', '2019-05-06 08:42:45'),
+(22, NULL, 'PROMO MERDEKAAAA', 'Disc 50% Maks. 20000', 3, '2019-05-31', '2019-05-01', 'Makanan', 'Discount', 50, 2000, 0, 'images.jpsg', '2019-05-12 16:39:17');
 
 -- --------------------------------------------------------
 
@@ -116,7 +110,7 @@ ALTER TABLE `deals_record`
 -- AUTO_INCREMENT untuk tabel `deals`
 --
 ALTER TABLE `deals`
-  MODIFY `id_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_deals` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `deals_record`
