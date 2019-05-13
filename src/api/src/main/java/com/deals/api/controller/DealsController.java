@@ -28,6 +28,13 @@ public class DealsController {
 	DealsRecordRepository dealsRecordRepository;
 	@Autowired
 	SecurityService securityService;
+	//Order Check Valid
+	@GetMapping("/checkdeals")
+	public List<Deals> checkValid(@RequestHeader int id_deals,@RequestHeader int id_customer) {
+//		String subject = securityService.validate(token);
+//		int id_customer = 3;
+	    return dealsRepository.checkDeals(id_deals, id_customer);
+	}
 	//RECORD SECTION
 	@GetMapping("/usedeals")
 	public List<DealsRecord> getAllRecord() {
